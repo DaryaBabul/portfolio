@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "024b0325-ffdb-49ae-aebd-0bc7c554f445",
+		"name": "Nasa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26501324",
+		"_collection_link": "https://solar-sunset-17635.postman.co/workspace/%25D0%2597%25D0%25B0%25D0%25B4%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F~a1c27952-2dbc-4c70-aa39-6c9646343bcd/collection/26501324-024b0325-ffdb-49ae-aebd-0bc7c554f445?action=share&source=collection_link&creator=26501324"
+	},
+	"item": [
+		{
+			"name": "curiosity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var photo_2Id_curiosity=jsonData.photos[1].id\r",
+							"pm.environment.set(\"photo_2Id_curiosity\", photo_2Id_curiosity);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/curiosity/photos?earth_date={{earth_date}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "{{earth_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "opportunity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var photo_2Id_opportunity=jsonData.photos[1].id\r",
+							"pm.environment.set(\"photo_2Id_opportunity\", photo_2Id_opportunity);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/opportunity/photos?earth_date={{earth_date}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"opportunity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "{{earth_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "spirit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var photo_2Id_spirit=jsonData.photos[1].id\r",
+							"pm.environment.set(\"photo_2Id_spirit\", photo_2Id_spirit);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/spirit/photos?earth_date={{earth_date}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"spirit",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "{{earth_date}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
