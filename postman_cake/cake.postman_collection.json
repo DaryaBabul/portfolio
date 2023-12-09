@@ -1,0 +1,941 @@
+{
+	"info": {
+		"_postman_id": "fa00c40e-f6da-421b-8a8b-22629527292d",
+		"name": "cake",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26501324",
+		"_collection_link": "https://solar-sunset-17635.postman.co/workspace/%25D0%2597%25D0%25B0%25D0%25B4%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F~a1c27952-2dbc-4c70-aa39-6c9646343bcd/collection/26501324-fa00c40e-f6da-421b-8a8b-22629527292d?action=share&source=collection_link&creator=26501324"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=aFV0MVqApftbKnpaaXfpjqSrdR4OHcqT83wNupLOzVra8sjfrx14XIyTtQd4y16Y; sessionid_dev.cakeiteasy.se=7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Dasha\",\r\n    \"last_name\": \"Bab\",\r\n    \"email\": \"dasha27@gmail.com\",\r\n    \"password\": \"12345678f\",\r\n    \"locale\": \"sv_SE\",\r\n    \"subscribed_on_news\": false\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/register/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=aFV0MVqApftbKnpaaXfpjqSrdR4OHcqT83wNupLOzVra8sjfrx14XIyTtQd4y16Y; sessionid_dev.cakeiteasy.se=7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dasha27@gmail.com\",\r\n    \"password\": \"12345678f\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/login/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/store/cart/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a product to the user cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"product\": 4398,\r\n        \"quantity\": 1,\r\n        \"parent_type\": null,\r\n        \"order_lines\": []\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "{{url}}/store/cart/order-lines/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"cart",
+						"order-lines",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/store/cart/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/auth/logout/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/store/cart/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=aFV0MVqApftbKnpaaXfpjqSrdR4OHcqT83wNupLOzVra8sjfrx14XIyTtQd4y16Y; sessionid_dev.cakeiteasy.se=7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "7jai5tpnxm0tpojcoz5txpuei7iuc2pr",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dasha27@gmail.com\",\r\n    \"password\": \"12345678f\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/login/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.dev.cakeiteasy.no",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "sv, en",
+						"disabled": true
+					},
+					{
+						"key": "cookie",
+						"value": "sessionid_api.dev.cakeiteasy.no=nf48dagwofz8temsco54txjx3rc89zjl; csrftoken=80BT1hgdD51fSifBZZR61YgpilA6QjlQb4hykIe2P6muFClLjgSzu0oCcu8krBfC; sessionid_dev.cakeiteasy.se=tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "origin",
+						"value": "https://dev.cakeiteasy.se",
+						"disabled": true
+					},
+					{
+						"key": "referer",
+						"value": "https://dev.cakeiteasy.se/",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\"",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors",
+						"disabled": true
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site",
+						"disabled": true
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+						"disabled": true
+					},
+					{
+						"key": "x-cart-key-header",
+						"value": "MARKETPLACE-SE",
+						"disabled": true
+					},
+					{
+						"key": "x-session-key-header",
+						"value": "tj4tj5bno1hjx1hzftlqpkdz3x374iud",
+						"disabled": true
+					},
+					{
+						"key": "x-source-header",
+						"value": "MARKETPLACE",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/store/cart/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.dev.cakeiteasy.no/api"
+		}
+	]
+}

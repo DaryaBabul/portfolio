@@ -1,0 +1,12 @@
+Postman collection for step-by-step test for the following flow:
+- Register a new user call
+- Get Cart
+- Add a product to the cart
+- Get Cart again and check if there is a single order line
+- Log out
+- Get Cart and check that there is no Order lines
+- Log in
+- Get Cart and check if there is still a single order-line there you have added before
+
+The request collection is created. 
+The Cart is saved for user, he is able to ge it from different device/browser when he is logged in again.
