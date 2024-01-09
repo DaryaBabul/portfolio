@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "c1ebead6-f2ef-430f-b0f5-ea2889afb323",
+		"name": "dummy API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26501324",
+		"_collection_link": "https://solar-sunset-17635.postman.co/workspace/%25D0%2597%25D0%25B0%25D0%25B4%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F~a1c27952-2dbc-4c70-aa39-6c9646343bcd/collection/26501324-c1ebead6-f2ef-430f-b0f5-ea2889afb323?action=share&source=collection_link&creator=26501324"
+	},
+	"item": [
+		{
+			"name": "получение списка пользователей",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "создание пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var reqbody = JSON.parse(request.data);\r",
+							"var userid = jsonData.id\r",
+							"pm.collectionVariables.set(\"user_id\", userid);\r",
+							"var email = jsonData.email\r",
+							"pm.collectionVariables.set(\"email\", email);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"first name in response is equal to first name in request\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(reqbody.firstName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"last name in response is equal to last name in request\", function () {\r",
+							"    pm.expect(jsonData.lastName).to.eql(reqbody.lastName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"email in response is equal to email in request\", function () {\r",
+							"    pm.expect(jsonData.email).to.eql(reqbody.email);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"email\": \"darya.zhidwrddddddtegdgs@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "получение одного пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Response is an object with id, firstName, lastName, email, registerDate, and updatedDate properties', function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object').that.has.all.keys('id', 'firstName', 'lastName', 'email', 'registerDate', 'updatedDate');\r",
+							"})\r",
+							"\r",
+							"pm.test(\"user id in response is equal to id in url\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"user_id\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "обновление пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var reqbody = JSON.parse(request.data);\r",
+							"\r",
+							"pm.test(\"last name has changed to the data in request\", function () {\r",
+							"pm.expect(jsonData.lastName).to.eql(reqbody.lastName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"first name has changed to the data in request\", function () {\r",
+							"    pm.expect(jsonData.firstName).to.eql(reqbody.firstName);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"user id in response is equal to id in url\", function () {\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"user_id\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"user email in response is equal to registered email\", function () {\r",
+							"    pm.expect(jsonData.email).to.eql(pm.variables.get(\"email\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "6544e1b2357d26fcd8b15d18",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstName\": \"Masha\",\r\n\"lastName\": \"Petrova\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "удаление пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"user id in response is equal to id in url\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"user_id\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "app-id",
+						"value": "6544e1b2357d26fcd8b15d18",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/{{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app_id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://dummyapi.io/data/v1"
+		},
+		{
+			"key": "app_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "email",
+			"value": ""
+		}
+	]
+}
